@@ -1,0 +1,3 @@
+UpdateTime = 0.1 -- second 
+CellsAmount = 20
+CellsSize = 30 -- pix
