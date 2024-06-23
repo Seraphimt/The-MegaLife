@@ -8,7 +8,10 @@
 #include <SDL_video.h>
 #include <SDL_image.h>
 
-#include "VisualComponents.h"
+#include "imgui.h"
+#include "imgui_impl_sdl2.h"
+#include "imgui_impl_sdlrenderer2.h"
+
 
 const int WINDOWS_WIDTH = 1100;
 const int WINDOWS_HEIGHT = 805;
@@ -18,18 +21,19 @@ private:
 	SDL_Window* Window;
 	SDL_Renderer* Render;
 	SDL_Texture* TextureDeadCell;
-	SDL_Texture* TextureButtonRestart;
-	//std::vector<std::unique_ptr<SDL_Texture>> TextureAtlas;
 	
 	void CreateRender();
 	SDL_Texture* LoadTexture(std::string FileName);
 	void LoadAllTextures();
 	void UpdateGraphic();
+	void UpdateGUI();
+	//ImGuiIO TestIO;
 	int HandleInput();
 private:
 	int CellsSize = 5;
 	int CellsCountW = 180;
 	int CellsCountH = 150;
+	int FieldW = CellsCountW * CellsSize;
 	unsigned int Seed;
 	std::vector<std::vector<bool>> Cells;
 	void ClearCells();
@@ -40,15 +44,10 @@ private:
 
 private:
 	bool IsPausing;
-	int FocusElement = -1;
-	int WhereCliced(int x, int y);
 private:
 	bool IsWrapField;
-	double UpdateTime = 0.1;
-private:
-	std::vector<std::unique_ptr<VisualComponent>> VisualComponents;
-	int IdResetButton, IdWrapButton, IdLoadTXTButton, IdSaveSeedButton, IdLoadSeedButton, IdCountEdit;
-	void InitVisualComponents();
+	const double UpdateTime = 0.1;
+	int GameSpeed = 1;
 private:
 	void LoadSettingsFromTXT();
 	double ParseLine(std::string Line);
