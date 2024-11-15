@@ -27,7 +27,6 @@ private:
 	void LoadAllTextures();
 	void UpdateGraphic();
 	void UpdateGUI();
-	//ImGuiIO TestIO;
 	int HandleInput();
 private:
 	int CellsSize = 5;

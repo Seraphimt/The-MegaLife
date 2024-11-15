@@ -100,10 +100,6 @@ int Game::HandleInput() {
 }
 
 Game::~Game() {
-//	for (int i = 0; i < TextureAtlas.size(); i++) {
-	//	SDL_DestroyTexture(TextureAtlas[i].get());
-	//}
-//	TextureAtlas.clear();
     SDL_DestroyRenderer(Render);
     SDL_DestroyWindow(Window);
 }
@@ -234,8 +230,6 @@ void Game::LoadSettingsFromTXT() {
 		}
 		inputStream.close();
 		//UpdateTime = settings[0];
-
-
 	}
 	catch (std::string str) {
 //
@@ -276,8 +270,6 @@ void Game::Run() {
 			UpdateCells();
 			elapsed = 0;
 		}
-
-
 	}
 	//Quit();
 }

@@ -156,7 +156,6 @@
     <ClCompile Include="C:\Users\Admin\source\repos\imgui\imgui_draw.cpp" />
     <ClCompile Include="C:\Users\Admin\source\repos\imgui\imgui_tables.cpp" />
     <ClCompile Include="C:\Users\Admin\source\repos\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="VisualComponents.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
@@ -169,7 +168,6 @@
     <ClInclude Include="C:\Users\Admin\source\repos\imgui\imstb_rectpack.h" />
     <ClInclude Include="C:\Users\Admin\source\repos\imgui\imstb_textedit.h" />
     <ClInclude Include="C:\Users\Admin\source\repos\imgui\imstb_truetype.h" />
-    <ClInclude Include="VisualComponents.h" />
     <ClInclude Include="Game.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

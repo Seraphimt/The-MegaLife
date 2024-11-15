@@ -27,9 +27,6 @@
     <ClCompile Include="Game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="VisualComponents.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\Admin\source\repos\imgui\imgui.cpp">
       <Filter>Исходные файлы\imgui</Filter>
     </ClCompile>
@@ -54,9 +51,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="VisualComponents.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\Admin\source\repos\imgui\imconfig.h">
