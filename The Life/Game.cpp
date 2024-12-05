@@ -14,7 +14,6 @@ void Game::CreateRender() {
      //   if (Render == nullptr)
       //      std::cout << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
 
-       // Ratio = 800 / 3;
 		ImGui::CreateContext();
 		ImGui::StyleColorsDark();
 		ImGui::BeginTable;
@@ -94,7 +93,6 @@ int Game::HandleInput() {
 			break;
 		}
 	}
-	//if (ReadMouseState()) MouseClick();
 
 	return 0;
 }
@@ -102,22 +100,6 @@ int Game::HandleInput() {
 Game::~Game() {
     SDL_DestroyRenderer(Render);
     SDL_DestroyWindow(Window);
-}
-
-void Game::SaveSeedtoFile() {
-	std::ofstream out("Images/Seed.txt", std::ios::out | std::ios::binary);
-	//if (out.is_open()) 
-	//	out.write((char*)CellsSeed, CellsCount* CellsCount);
-	
-	out.close();
-}
-
-void Game::LoadSeedtoFile() {
-	std::ifstream in("Images/Seed.txt", std::ios::in | std::ios::binary);;
-	//if (in.is_open())
-	//	in.read((char*)Cells, CellsCount * CellsCount);
-
-	in.close();
 }
 
 void Game::LoadAllTextures() {
@@ -143,12 +125,6 @@ void Game::InitCells() {
 		for (int j = 0; j < CellsCountH; j++) 
 			Cells[i].push_back(std::rand() % 2);
 	}
-	
-	//Cells[0][0] = true; Cells[1][0] = true; Cells[CellsCount - 1][0] = true;
-
-	//auto rng = std::default_random_engine{};
-	//std::shuffle(Deck.begin(), Deck.end(), rng);
-
 }
 
 void Game::UpdateCells() {
@@ -232,9 +208,7 @@ void Game::LoadSettingsFromTXT() {
 		//UpdateTime = settings[0];
 	}
 	catch (std::string str) {
-//
 	}
-
 }
 
 void Game::Run() {
@@ -264,8 +238,6 @@ void Game::Run() {
 		duration = std::chrono::system_clock::now() - now;
 		elapsed += duration.count();
 
-		//	using namespace std::this_thread;     // sleep_for, sleep_until
-		//	using namespace std::chrono_literals;
 		if (!IsPausing && elapsed > UpdateTime / GameSpeed) {
 			UpdateCells();
 			elapsed = 0;

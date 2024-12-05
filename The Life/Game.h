@@ -50,9 +50,6 @@ private:
 private:
 	void LoadSettingsFromTXT();
 	double ParseLine(std::string Line);
-
-	void SaveSeedtoFile();
-	void LoadSeedtoFile();
 public:
 	void Run();
 	
